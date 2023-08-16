@@ -34,7 +34,7 @@ def del_message(conn, channel_id, message_id):
 		resp = conn.getresponse() 
 		 
 		if 199 < resp.status < 300: 
-			print(" Deleted!", end="")
+			print("     - Deleted!")
 			pass 
  
 		else:
@@ -51,7 +51,7 @@ def send_message(conn, channel_id, message_data):
         resp = conn.getresponse() 
          
         if 199 < resp.status < 300: 
-            print("Message Sent!", end="")
+            print("     - Message Sent!")
             rs = json.loads(resp.read())
             ids = rs['id']
             pass 
@@ -78,7 +78,7 @@ def main():
 if __name__ == '__main__': 
 	i = 1
 	while True:    
-		print(f"{i}| ", end="")
+		print(f"{i}| Start")
 		main()
 		print()
 		sleep(timer) #How often the message will be sent (in seconds), every 1 hour = 3600
